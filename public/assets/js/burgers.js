@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const newSleep = e.target.getAttribute('data-newsleep');
 
         const newSleepState = {
-          sleepy: newSleep,
+          devoured: newSleep,
         };
 
         fetch(`/api/cats/${id}`, {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       // Grabs the value of the textarea that goes by the name, "quote"
       const newCat = {
         name: document.getElementById('ca').value.trim(),
-        sleepy: document.getElementById('sleepy').checked,
+        devoured: document.getElementById('devoured').checked,
       };
 
       // Send POST request to create a new quote
