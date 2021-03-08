@@ -21,7 +21,8 @@ $(function() {
     );
   });
 
-  $(".create-form").on("submit", function(event) {
+  $("#create-form").on("submit", function (event) {
+    console.log("button working")
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
