@@ -4,19 +4,26 @@
 
 <ul>
   {{#each burgers}}
-  {{#unless devoured}}
-  {{> burgers/burger-block devoured=true}}
-  {{/unless}}
+ 
+  {{#if this.devoured}}
+    <li>{{this.burger_name}}</li>
+  {{/if}}
+ 
   {{/each}}
+ 
 </ul>
 
 <h2>Burgers Hot and ready to Eat! </h2>
 
 <ul>
-  {{#each burgers}}
-  {{#if devoured}}
-  {{> burgers/burger-block devoured=false}}
-  {{/if}}
+
+   {{#each burgers}}
+   
+  {{#unless this.devoured}}
+  <li>{{this.burger_name}}</li>
+    <button type="submit" value={{this.id}}>Eat a Burger</button> 
+  {{/unless}}
+ 
   {{/each}}
 </ul>
 
@@ -34,5 +41,6 @@
     <input type="radio" name="devoured" value="0"> Ready to Eat!
   </div>
 
+  
   <button type="submit">Eat a Burger</button>
 </form>
