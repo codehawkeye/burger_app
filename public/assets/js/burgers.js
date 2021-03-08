@@ -1,7 +1,8 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-  $(".change-devour").on("click", function(event) {
-    var id = $(this).data("id");
+  $(".change-devour").on("click", function (event) {
+    console.log(event.target.value)
+    var id = event.target.value;
     var newDevour = $(this).data("newdevour");
 
     var newDevourState = {
